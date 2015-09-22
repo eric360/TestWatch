@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert,.Sound], categories: nil))
+        let localNotification:UILocalNotification = UILocalNotification()
+        localNotification.alertAction = "Testing notifications on iOS8"
+        localNotification.alertBody = "Woww it works!!"
+        localNotification.fireDate = NSDate(timeIntervalSinceNow: 20)
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
         return true
     }
 

@@ -16,6 +16,8 @@ class InterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
+        
+        print("test")
     }
 
     override func willActivate() {
